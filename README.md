@@ -1,3 +1,4 @@
 # aia
 Assistente de Inteligencia Artificial 
-link: getteli.github.io/aia/
+link: 
+- **[page](https://getteli.github.io/aia/)**;
