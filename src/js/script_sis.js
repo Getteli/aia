@@ -1,4 +1,3 @@
-alert('entrei')
 let img_btn_micro = document.getElementById('img_btn_micro'); // imagem do btn microphone
 let box_msgs = document.getElementById('box_msgs'); // div que armazena os dialogos
 let recognizing = false; // Seta o valor false para a variavel recognizing para fazermos a validação se iniciou a gravação
@@ -53,8 +52,6 @@ const Methods =
 					voice_selected = v;
 			});
 		}
-	
-		alert(voice_selected.name);
 
 		if (txt !== '') { // se o texto for diferente de vazio, comeca a falar
 			utterThis = new SpeechSynthesisUtterance(txt); // o objeto sintetizador recebe o texto para falr
