@@ -2,9 +2,27 @@
 /*color:
 red:   rgb(255, 25, 25), #ff1919
 black: rgb(75, 75, 77), #4b4b4d, */
-h1,h2,h3,h4,h5,p,small{
+h1,h2,h3,h4,h5,p,li, a, span, section{
 	font-family: 'Dosis', sans-serif;
 	font-weight: normal;
+  font-size: large;
+}
+span, ul, p
+{
+  margin: 0;
+  padding: 0;
+}
+p
+{
+  margin: 5px 0;
+}
+ul
+{
+  list-style: none;
+}
+li
+{
+  font-weight: bold;
 }
 a{
 	text-decoration: none;
