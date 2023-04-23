@@ -9,6 +9,7 @@ let interim_transcript = ''; // Defino a minha variavel interim_transcript como 
 let synth = window.speechSynthesis; // cria o objeto de sintetizar a voz
 let utterThis ; // let p/ elemento de sintetizar a voz
 let voices = []; // lista com as vozes
+let voice_selected = null;
 var SpeechRecognition = SpeechRecognition || webkitSpeechRecognition; // cria o objeto de microphone para ouvir
 var recognition = new SpeechRecognition();
 let resultado; // recebera a transcrição do audio ou o interim
@@ -42,11 +43,15 @@ const Methods =
 			rate_sis = 1;
 		}
 		Methods.endRecog(); // para de escutar, para poder apenas falar
+
 		voices = synth.getVoices(); // recebe a lista de vozes
-		let voice_selected = voices[16]; // "Google português do Brasil"
-		if (voice_selected.name != "Google português do Brasil")
+		if (voice_selected == null)
 		{
-			voice_selected = voices[1]; // "Microsoft Maria - Portuguese (Brazil)"
+			voices.map((v) =>
+			{
+				if (v.lang == "pt-BR")
+					voice_selected = v;
+			});	
 		}
 	
 		if (txt !== '') { // se o texto for diferente de vazio, comeca a falar
@@ -59,14 +64,13 @@ const Methods =
 				// console.log('falando: voz da AIA');
 			} // fim ta falando
 	
-			// console.log("AIA: " + txt + ", pitch: " + pitch_sis + ", rate: " + rate_sis) // p/ teste ver o que esta sendo dito e se esta respondendo
 			utterThis.voice = voice_selected; // pega a voz ( Google - brasil feminino )
 			utterThis.pitch = pitch_sis; // recebe o pitch
 			utterThis.rate = rate_sis; // recebe o rate
 			synth.speak(utterThis); // fala
 	
 			utterThis.onend = function (event) { // informar quando acabar de falar
-				recognizing = false;
+				// recognizing = false;
 				Methods.startRecog(); // retorna a gravação
 			}
 		} // fim verifica txt diferente de vazio
@@ -161,7 +165,7 @@ const Methods =
 					{
 						txt_aia = "Olá, no que posso ser útil ?";
 					}
-					else if (resultado.indexOf('obrigado') >= 0 || resultado.indexOf('obrigada'))
+					else if (resultado.indexOf('obrigado') >= 0 || resultado.indexOf('obrigada') >= 0)
 					{
 						txt_aia = "De nada, qualquer coisa, só perguntar. Fique a vontade e aproveite o passeio.";
 					}
@@ -189,7 +193,6 @@ const Methods =
 								// break; // se achou, entao para
 							// } // fim if
 				}
-				break;
 			}
 		};
 	},
