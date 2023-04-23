@@ -51,9 +51,11 @@ const Methods =
 			{
 				if (v.lang == "pt-BR")
 					voice_selected = v;
-			});	
+			});
 		}
 	
+		alert(voice_selected.name);
+
 		if (txt !== '') { // se o texto for diferente de vazio, comeca a falar
 			utterThis = new SpeechSynthesisUtterance(txt); // o objeto sintetizador recebe o texto para falr
 			utterThis.onerror = function (event) { // informar caso haja erro
