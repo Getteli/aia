@@ -9,12 +9,8 @@ ATUALIZAÇÃO:
 	- minificar os scripts.
 
 INFO:
-	- As fotos não são fisheye, elas são Equirectangular.
 	- Para add uma frase ao banco de dados, a frase que a AIA possa entender é: tudo maiusculo, com aspas simples e separado por virgula.
 	- Em uma frase pode haver variaçoes (ex: 'OI','OLÀ',...).
 	- Limite de 174 caracter para o webspeechAPI falar.
 	- No momento, esta ativo um modo versao no script_sis, descomente o script do ajax, a frase e etc e comente as coisas da demo.
 	- Para poder usar (em um servidor), é necessário HTTPS (SSL).
-
-NOMECLATURA:
-	- por a nomeclatura do que é importante, tanto banco quanto scripts
