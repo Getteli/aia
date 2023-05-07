@@ -1,5 +1,6 @@
 let img_btn_micro = document.getElementById('img_btn_micro'); // imagem do btn microphone
 let box_msgs = document.getElementById('box_msgs'); // div que armazena os dialogos
+let situation = document.querySelector('#situation');
 let recognizing = false; // Seta o valor false para a variavel recognizing para fazermos a validação se iniciou a gravação
 let cancel = false; // verificar se esta ligado ou desligado
 let loop = false; // verificar se pode continuar gravando em loop
@@ -9,12 +10,7 @@ let synth = window.speechSynthesis; // cria o objeto de sintetizar a voz
 let utterThis ; // let p/ elemento de sintetizar a voz
 let voices = []; // lista com as vozes
 let voice_selected = null;
-var SpeechRecognition = SpeechRecognition || webkitSpeechRecognition; // cria o objeto de microphone para ouvir
-var recognition = new SpeechRecognition();
-let resultado; // recebera a transcrição do audio ou o interim
-let frases = new Array(); // recebe o array com as opcoes de frases do banco
-let txt_aia; // armazena a frase quem vem do banco, que a aia vai dizer
-let elementp_bm = document.createElement("p"); // elemento paragrafo para a caixa de mensagem
+var SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition; // cria o objeto de microphone para ouvir
 
 const Methods = 
 {
@@ -82,11 +78,18 @@ const Methods =
 	// inicia e cancela o microfone
 	iniciar: () =>
 	{
-		if (cancel || recognizing) { // se o cancelar e o recognizing for verdadeiro, termina de gravar
+		// se o cancelar e o recognizing for verdadeiro, termina de gravar
+		if (cancel || recognizing)
+		{
 			Methods.endRecog(); // inicia a funcao para terminar de gravar
 			img_btn_micro.src = "src/midia/micro_on.png"; // muda a imagem para terminar a gravacao
-		} else { // se nao, comeca a gravar
+			situation.innerHTML = 'Clique para falar'; // informa precisa clicar para falar
+		}
+		// se nao, comeca a gravar
+		else
+		{
 			img_btn_micro.src = "src/midia/micro_off.png"; // muda a imagem para comecar a gravar
+			situation.innerHTML = 'Vocé pode falar agora'; // informa que pode falar agora
 			Methods.startRecog(); // inicia a funcao para comecar a gravar
 		}
 	},
@@ -116,7 +119,8 @@ const Methods =
 	// funcao para demonstrar que o webkit speech não é suportado no browser
 	unsupported: () =>
 	{
-		alert('A API de fala do Webkit não é suportada em seu navegador');
+		alert('A API de fala do Webkit não é suportada em seu navegador. Utilize outro.');
+		document.querySelector('#button').classList.add('disabled');
 	},
 	supported: () =>
 	{
@@ -213,33 +217,46 @@ const Methods =
 	}
 };
 
-setTimeout(() => {
-	/*inicia a verificacao para comecar ouvir e responder. Se o suporte ao webkitSpeechRecognition for falso, entao nao é suportado no browser*/
-	if ( !('webkitSpeechRecognition' in window) ) {
-		Methods.unsupported(); // inicia a funcao para não suportado
-	} else { // se nao, inicia a funcao para ouvir e responder
-		Methods.supported();
-	}
-}, 300);
-
-// termina
-recognition.onend = function(event) {
-	if ( loop ) {
-		recognizing = false;
-		Methods.startRecog();
-	}
-}
-
-// funcao para dizer o erro
-recognition.onerror = function(event) {
-	if ( event.error != 'no-speech') {
-		Methods.endRecog(); // inicia a funcao para terminar de gravar
-		img_btn_micro.src = "src/midia/micro_on.png"; // muda a imagem para terminar a gravacao
-	}
-}
-
-// click para iniciar a gravação
-$('#button').on('click', function()
+if (!SpeechRecognition)
 {
-	Methods.iniciar();
-});
+	Methods.unsupported();
+}
+else
+{
+	var recognition = new SpeechRecognition();
+	let resultado; // recebera a transcrição do audio ou o interim
+	let frases = new Array(); // recebe o array com as opcoes de frases do banco
+	let txt_aia; // armazena a frase quem vem do banco, que a aia vai dizer
+	let elementp_bm = document.createElement("p"); // elemento paragrafo para a caixa de mensagem
+
+	setTimeout(() => {
+		/*inicia a verificacao para comecar ouvir e responder. Se o suporte ao webkitSpeechRecognition for falso, entao nao é suportado no browser*/
+		if ( !('webkitSpeechRecognition' in window) ) {
+			Methods.unsupported(); // inicia a funcao para não suportado
+		} else { // se nao, inicia a funcao para ouvir e responder
+			Methods.supported();
+		}
+	}, 300);
+
+	// termina
+	recognition.onend = function(event) {
+		if ( loop ) {
+			recognizing = false;
+			Methods.startRecog();
+		}
+	}
+
+	// funcao para dizer o erro
+	recognition.onerror = function(event) {
+		if ( event.error != 'no-speech') {
+			Methods.endRecog(); // inicia a funcao para terminar de gravar
+			img_btn_micro.src = "src/midia/micro_on.png"; // muda a imagem para terminar a gravacao
+		}
+	}
+
+	// click para iniciar a gravação
+	$('#button').on('click', function()
+	{
+		Methods.iniciar();
+	});
+}

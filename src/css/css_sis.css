@@ -1,73 +1,137 @@
 @import url('https://fonts.googleapis.com/css?family=Dosis:300,400,500');
+
 /*color:
 red:   rgb(255, 25, 25), #ff1919
 black: rgb(75, 75, 77), #4b4b4d, */
-h1,h2,h3,h4,h5,p,li, a, span, section{
+
+h1,h2,h3,h4,h5,p,li, a, span, section
+{
 	font-family: 'Dosis', sans-serif;
-	font-weight: normal;
-  font-size: large;
 }
+
 span, ul, p
 {
-  margin: 0;
-  padding: 0;
+	margin: 0;
+	padding: 0;
 }
+
 p
 {
-  margin: 5px 0;
+	margin: 5px 0;
 }
+
 ul
 {
-  list-style: none;
+	list-style: none;
 }
+
 li
 {
-  font-weight: bold;
+	font-weight: bold;
 }
-a{
+
+a
+{
 	text-decoration: none;
 	color: #ff1919;
 }
-body{
+
+body
+{
 	background-color: #4b4b4d;
 	overflow-x: hidden;
 }
-/*scroll personalizado*/
-body::-webkit-scrollbar-track, .box_msgs::-webkit-scrollbar-track{
-  background-color: #CCC;
-}
 
-body::-webkit-scrollbar, .box_msgs::-webkit-scrollbar{
-  width: 10px;
-  height: 8px;
-  background-color: rgb(255, 25, 25);
-}
-
-body::-webkit-scrollbar-thumb, .box_msgs::-webkit-scrollbar-thumb{
-  background-color: rgb(255, 25, 25);
-  border-radius: 50px;
-}
-small{
-  display: block;
-}
-.logo_front{
-    width: 100%;
-    position: relative;
-    text-align: center;
-}
-.logo_front > img{
-    width: 206.4px;
-    height: 87.2px;
-}
-.explica{
-	color: rgba(255,255,255, 0.8);
+.text-center
+{
 	text-align: center;
-	padding: 15px;
-	margin: 25px;
 }
-.box_msgs{
+
+.bold
+{
+	font-weight: bold;
+}
+
+.body-grid
+{
+	display: grid;
+	display: -ms-inline-grid;
+	display: -moz-inline-grid;
+	grid-template-columns: 50% 50%;
+	margin-bottom: 5em;
+}
+
+/*scroll personalizado*/
+body::-webkit-scrollbar-track, .box_msgs::-webkit-scrollbar-track
+{
+	background-color: #CCC;
+}
+
+body::-webkit-scrollbar, .box_msgs::-webkit-scrollbar
+{
+	width: 10px;
+	height: 8px;
+	background-color: rgb(255, 25, 25);
+}
+
+body::-webkit-scrollbar-thumb, .box_msgs::-webkit-scrollbar-thumb
+{
+	background-color: rgb(255, 25, 25);
+	border-radius: 50px;
+}
+
+#situation
+{
+	margin-top: 15px;
+}
+
+small
+{
+	display: block;
+}
+
+.disabled
+{
+	pointer-events: none !important;
+	background-color: #CCC !important;
+}
+
+.logo-douglas
+{
+	display: inline-grid;
+	text-align: center;
+}
+
+.logo-douglas > img
+{
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.logo_front
+{
+		width: 100%;
+		position: relative;
+		text-align: center;
+}
+
+.logo_front > img
+{
+		width: 206.4px;
+		height: 87.2px;
+}
+
+.explica
+{
+	color: rgba(255,255,255, 0.8);
+	padding: 0 15px;
+}
+
+.box_msgs
+{
 	background-color: rgba(0,0,0, 0.7);
 	height: 200px;
+	border-radius: 30px;
 	padding: 15px;
 	margin: 25px;
 	color: rgba(255,255,255, 0.8);
@@ -75,13 +139,16 @@ small{
 	position: relative;
 	overflow: auto;
 }
-.we_bm{
+
+.we_bm
+{
 	background-color: rgba(99, 97, 97, 0.3);
 	padding: 10px;
 	margin: 10px;
 	border-radius: 15px;
 }
-.sis_bm{
+.sis_bm
+{
 	background-color: rgba(99, 97, 97, 0.8);
 	padding: 10px;
 	margin: 10px;
@@ -89,66 +156,125 @@ small{
 	text-align: right;
 }
 
-.btn_microphone{
-  position: relative;
-  left: 50%;
-  width: 90px;
-  margin-left: -45px;
-  bottom: 0;
-  margin-top: 50px;
-  margin-bottom: 50px;
+.btn_microphone
+{
+	position: relative;
+	width: 100%;
+	display: inline-grid;
+	display: -ms-inline-grid;
+	display: -moz-inline-grid;
+	margin-bottom: 20px;
 }
-.img_btn_micro{
-  width: 100%;
-  height: auto;
-  margin: auto;
+
+.btn_microphone > div, .btn_microphone > p
+{
+	margin: 0 auto;
 }
-#button {
-  background-color: rgb(255, 25, 25);
-  width: 50px;
-  height: 50px;
-  border-radius: 100%;
-  padding: 15px;
-  position: relative;
-  transition: all 0.1s;
-  cursor: pointer;
-  z-index: 2;
-}
-#button:hover, 
-#button:active {
-  background-color: rgb(198, 19, 19);
-}
-.visual {
-  position: absolute;
-  width: 420px;
-  height: 420px;
-  border-radius: 100%;
-  padding: 15px;
-  transform: scale(0.001);
-  mix-blend-mode: screen;
-  opacity: 0;
-  z-index: 1;
-  margin: -267px -209px -209px -186px;
-  transition: all 0.2s;
-  background: rgba(255,255,255, 1);
-}
-footer{
-	left: 0;
-	bottom: 0;
+
+.img_btn_micro
+{
 	width: 100%;
 	height: auto;
-	padding: 10px;
-	margin: -10px;
-	z-index: 9999;
+	margin: auto;
+}
+
+#button
+{
+	background-color: rgb(255, 25, 25);
+	width: 50px;
+	height: 50px;
+	border-radius: 100%;
+	padding: 15px;
+	position: relative;
+	transition: all 0.1s;
+	cursor: pointer;
+	z-index: 2;
+}
+
+#button:hover, 
+#button:active
+{
+	background-color: rgb(198, 19, 19);
+}
+
+.visual
+{
+	position: absolute;
+	width: 420px;
+	height: 420px;
+	border-radius: 100%;
+	padding: 15px;
+	transform: scale(0.001);
+	mix-blend-mode: screen;
+	opacity: 0;
+	z-index: 1;
+	margin: -267px -209px -209px -186px;
+	transition: all 0.2s;
+	background: rgba(255,255,255, 1);
+}
+
+footer
+{
+	display: flex;
+	justify-content: space-between;
+	width: 90%;
+	height: auto;
 	color: rgba(255,255,255, 0.8);
+	margin: 0 auto;
 }
-footer > p{
-	display: inline;
-	text-align: right;
-	float: right;
-	margin-right: 20px;
+
+footer > div > p
+{
+	text-align: center;
+	line-height: 3;
 }
-footer > img{
+
+footer > div > img
+{
 	width: 103.2px;
 	height: 43.6px;
+}
+
+@media screen and (max-width: 900px)
+{
+	footer
+	{
+		width: 100%;
+	}
+}
+
+@media screen and (max-width: 850px)
+{
+	.body-grid
+	{
+		grid-template-columns: 100%;
+	}
+
+	.body-grid > .explica
+	{
+		order: 2;
+	}
+	
+	.body-grid > .content
+	{
+		order: 1;
+	}
+	
+}
+
+@media screen and (max-width: 765px)
+{
+	footer
+	{
+		display: grid;
+		display: -ms-inline-grid;
+		display: -moz-inline-grid;
+		text-align: center;
+		width: fit-content;
+	}
+
+	footer > div
+	{
+		margin: 10px 0;
+	}
 }

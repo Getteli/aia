@@ -18,57 +18,68 @@
 	<div class="logo_front">
 		<img src="src/midia/logo_AIA.png">
 	</div>
-	<!-- TEXTO EXPLICANDO SOBRE A APLICAÇÃO -->
-	<section class="explica">
-		<h3>Bem vindo a AIA</h3>
-		<span>
-			<p>AIA é uma aplicação desenvolvida usando comando de Voz via JAVASCRIPT.</p>
-			<p>AIA - Assistente por Inteligência Artificial, mesmo ainda não sendo uma inteligência artificial, o seu futuro ainda será muito promissor e um longo caminho ainda virá.</p>
-			<p>Ela é gerenciada por um banco de dados. A ideia é algo simples, de forma direta. Seu uso pode ser voltado para totens de atendimento em entreterimento (por exemplo: shoppings, parques, festivais entre outros).</p>
-			<p>Como seu gerenciamento é por um banco, a ideia é que ela seja usada como um banco de perguntas e respostas. Perguntas como: onde fica o banheiro, explicacoes sobre o quadro X, horario de funcionamento, ajuda, locais e etc.</p>
-			<p>Por ser uma aplicação via GIT, ela no momento não esta conectada ao banco, mas possui algumas frases de exemplo</p>
-		</span>
-		<span>
-			<p>Sobre AIA:</p>
-			<p>Criada em meados de <b>2018</b>, no inicio da minha trajetória de programação. Foi atualizada a pouco tempo para página no github, mas sem atualizações relevantes em seu código.</p>
-			<p>OBS: no mobile, a API webspeech ainda tem alguns bugs.</p>
-		</span>
-		<span>
-			<p>Técnologias usadas:</p>
-			<ul>
-				<li>Jquery</li>
-				<li>Web Speech API</li>
-				<li>SQL (para o banco de dados)</li>
-			</ul>
-		</span>
-		<span>
-			<p>comandos exemplos:</p>
-			<ul>
-				<li>Olá Aia... / Oi Aia...</li>
-				<li>Onde fica o banheiro ?</li>
-				<li>Onde fica a lanchonete ?</li>
-				<li>Pode me explicar este quadro ?</li>
-			</ul>
-		</span>
-	</section>
 
-	<div class="box_msgs" id="box_msgs">
-		<p class="sis_bm" id="sis_bm">Olá, em que posso ajudar?</p>
-	</div>
+	<div class="body-grid">
+		<!-- TEXTO EXPLICANDO SOBRE A APLICAÇÃO -->
+		<div class="explica">
+			<h2 class="text-center bold">Bem vindo a AIA</h2>
+			<span>
+				<p>AIA - Assistente por Inteligência Artificial, mesmo ainda não sendo uma inteligência artificial, o seu futuro ainda será muito promissor e um longo caminho ainda virá. É uma aplicação desenvolvida usando comando de Voz via JAVASCRIPT.</p>
+				<p>Ela é gerenciada por um banco de dados. A ideia é algo simples, de forma direta. Seu uso pode ser voltado para totens de atendimento em entreterimento (por exemplo: shoppings, parques, festivais entre outros).</p>
+				<p>Como seu gerenciamento é por um banco, a ideia é que ela seja usada como um banco de perguntas e respostas. Perguntas como: onde fica o banheiro, explicacoes sobre o quadro X, horario de funcionamento, ajuda, locais e etc.</p>
+				<p>Por ser uma aplicação via GIT, ela no momento não esta conectada ao banco, mas possui algumas frases de exemplo. Logo abaixo</p>
+			</span>
+			<span>
+				<h2 class="text-center bold">Comandos de exemplo:</h2>
+				<ul>
+					<li>Olá Aia... / Oi Aia...</li>
+					<li>Onde fica o banheiro ?</li>
+					<li>Onde fica a lanchonete ?</li>
+					<li>Pode me explicar este quadro ?</li>
+				</ul>
+			</span>
+			<span>
+				<h2 class="text-center bold">Sobre a AIA</h2>
+				<p>Criada em meados de <b>2018</b>, no inicio da minha trajetória de programação. Foi atualizada a pouco tempo para página no github, mas sem atualizações relevantes em seu código.</p>
+				<p>OBS: no mobile, a API webspeech ainda tem alguns bugs.</p>
+				<p>Técnologias usadas:</p>
+				<ul>
+					<li>Jquery</li>
+					<li>Web Speech API</li>
+					<li>SQL (para o banco de dados)</li>
+				</ul>
+			</span>
+		</div>
 
-	<!-- BUTTON MICROPHONE -->
-	<div class="btn_microphone">
-		<div id="button">
-			<img src="src/midia/micro_on.png" class="img_btn_micro" id="img_btn_micro" />
+		<div class="content">
+			<div class="box_msgs" id="box_msgs">
+				<p class="sis_bm" id="sis_bm">Olá, em que posso ajudar?</p>
+			</div>
+			<!-- BUTTON MICROPHONE -->
+			<div class="btn_microphone">
+				<div id="button">
+					<img src="src/midia/micro_on.png" class="img_btn_micro" id="img_btn_micro" />
+				</div>
+				<p id="situation">Clique para falar</p>
+			</div>
+			<!-- FIM BUTTON MICROPHONE -->
 		</div>
 	</div>
-	<!-- FIM BUTTON MICROPHONE -->
 
-<footer>
-	<img src="src/midia/logo_AIA.png">
-	<p>Douglas - (21) 9 6517-8849</p>
-	<p>Esta aplicação é uma criação de <a href="https://www.facebook.com/iliontecnologia" target="_blank">iliontecnologia</a>, entre em contato conosco para mais informação.</p>
-</footer>
+	<footer>
+		<div class="">
+			<img src="src/midia/logo_AIA.png">
+		</div>
+		<div class="">
+			<a class="logo-douglas" href="https://getteli.github.io/Getteli">
+				<img src="src/midia/DG_logo.png" class="mx-auto mb-4 p-0" alt="DG" width="35px">
+				<span class="text-gray-200 hover:text-gray-500">Douglas A. Silva</span>
+			</a>
+		</div>
+		<div class="">
+			<p>criado pelo Douglas Araujo Silva, entre em contato para mais informação.</p>
+		</div>
+	</footer>
 
 <!-- SCRIPTS -->
 <script src="https://code.jquery.com/jquery-3.3.1.min.js" type="text/javascript"></script>
