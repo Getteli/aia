@@ -229,12 +229,6 @@ footer > div > p
 	line-height: 3;
 }
 
-footer > div > img
-{
-	width: 103.2px;
-	height: 43.6px;
-}
-
 @media screen and (max-width: 900px)
 {
 	footer
