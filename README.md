@@ -16,11 +16,11 @@ Criada em meados de <b>2018</b>, no inicio da minha trajetória de programação
 </p>
 
 ## Tecnologias usadas:
-<ul>
-    <li>Jquery</li>
-    <li>Web Speech API</li>
-    <li>SQL (para o banco de dados)</li>
-</ul>
+- **[Javascript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript)**;
+- **[Jquery](https://jquery.com/)**;
+- **[Web Speech API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API)**;
+- **[MySql](https://www.mysql.com/)**;
+
 <hr>
 Link do exemplo do projeto: 
 
