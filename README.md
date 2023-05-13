@@ -1,4 +1,4 @@
-<p align="center"><a href="https://influenciesuamarca.com.br" target="_blank"><img src="https://getteli.github.io/aia/src/midia/logo_AIA.png" width="200"></a></p>
+<p align="center"><a href="https://getteli.github.io/aia/" target="_blank"><img src="https://getteli.github.io/aia/src/midia/logo_AIA.png" width="200"></a></p>
 
 <h2 align="center">
     <b>Assistente por Inteligência Artificial</b>
